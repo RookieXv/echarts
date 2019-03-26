@@ -1,0 +1,78 @@
+option= {
+	radar: [{
+		indicator: [{
+				text: '运输单位',
+				max:'3500'
+				
+			},
+			{
+				text: '销售单位',
+				max:'3500'
+			},
+			{
+				text: '使用单位',
+				max:'3500'
+			}
+		
+		],
+		center: ['46%', '50%'], // 位置
+		radius: 90, //大小
+		startAngle: 90,
+		splitNumber: 6,
+		shape: 'circle',
+		name: {
+		    show:false,
+			formatter: '{value}',
+			textStyle: {
+				color: 'aqua' // 文字颜色
+			}
+		},
+		splitArea: {
+			areaStyle: {
+				 color: 'rgba(255,0,0,0)', //圆环颜色
+				shadowColor: 'aqua', // 圆颜色
+				shadowBlur: 10
+			}
+		},
+		axisLine: {
+			lineStyle: {
+				color: 'aqua' // 分割线
+			}
+		},
+		splitLine: {
+			lineStyle: {
+				color:['rgba(0,255,255,1)','rgba(0,255,255,0)','rgba(0,255,255,0)','rgba(0,255,255,0)','rgba(0,255,255,0)','rgba(0,255,255,0)'], //圆线
+				width:3
+			}
+		}
+	}],
+	series: [{
+		name: '雷达图',
+		type: 'radar',
+		symbol: 'circle', // 拐点的样式，还可以取值'rect','angle'等
+        symbolSize: 2, // 拐点的大小
+		itemStyle: {
+			emphasis: {
+				lineStyle: {
+					width: 5,
+					color: 'red'
+				}
+			}
+		},
+		data: [{
+			value: [2000, 1400, 3200],
+			areaStyle: {
+				normal: {
+					color: 'rgba(0, 255, 255, 0.4)' // 选择区域颜色
+				}
+			},
+			      itemStyle: {
+                    normal: {
+                        color: 'rgba(0,255,225,.5)',
+                        borderColor: 'rgba(0,0,0,1)', 
+                        borderWidth:3
+                    },
+                }
+		}]
+	}]
+}
