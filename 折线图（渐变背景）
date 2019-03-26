@@ -1,0 +1,58 @@
+option = {
+    tooltip:{
+        axisPointer: {
+    label: { 
+        formatter: function (params) {
+            if (params.seriesData.length === 0) {
+                // 就是这里，可以获取到我想要的那个数据
+                mouseCurValue = params.value;
+            }
+        },
+    }
+},
+    },
+    xAxis: {
+        
+        type: 'category',
+        data: ['03.09', '03.10', '03.11', '03.12', '03.13', '03.14', '03.15'],
+    	axisLine: {
+			show: false,
+			lineStyle: {
+				color: '#ffffff'
+			}
+		},
+		axisTick: {
+			show: false
+		}
+    },
+    yAxis: {
+        show:false,
+        type: 'value',
+		splitLine: { //网格线
+			show: false
+		}
+    },
+    series: [{
+        data: [40, 45, 46, 41, 50, 35, 44],
+        type: 'line',
+        areaStyle: {
+            color:new echarts.graphic.LinearGradient(0, 0, 0, 1,[{
+                            offset: 0, color: 'rgb(1,113,113,1)' // 0% 处的颜色
+                        }, {
+                            offset: 0.8, color: 'rgb(1,113,113,0.2)' // 100% 处的颜色
+                        }, {
+                            offset: 1, color: 'rgb(1,113,113,0.0)' // 100% 处的颜色
+                        }])
+            
+        },
+        color:'#FBB03B',
+        symbol: 'circle',
+        lineStyle: {        // 系列级个性化折线样式  
+                width: 3,  
+                type: 'solid',  
+                color: "#FBB03B" //折线的颜色
+            },
+            symbolSize:10, //折线点的大小
+
+    }]
+};
