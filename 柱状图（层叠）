@@ -1,0 +1,71 @@
+option = {
+	tooltip: {
+		trigger: 'axis',
+		axisPointer: { // 坐标轴指示器，坐标轴触发有效
+			type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+		}
+	},
+	grid: {
+		left: '16%',
+		right: '5%',
+		bottom: '10%',
+		top: '5%',
+		containLabel: true
+	},
+	xAxis: [{
+		type: 'value',
+		show: false
+
+	}],
+	yAxis: [{
+		type: 'category',
+		data: ['度假区', '太仓市', '昆山市', '常熟市', '张家港', '吴江区', '相城区', '吴中区', '虎丘区', '园   区', '姑苏区'],
+		axisLine: {
+			show: false,
+			lineStyle: {
+				color: '#00ffee'
+			}
+		},
+		axisTick: {
+			show: false
+		}
+	}, ],
+	series: [{
+			name: '特种行业',
+			type: 'bar',
+			barWidth: 5,
+			stack: '种类',
+			data: [120, 132, 101, 134, 290, 230, 220, 134, 290, 230, 220],
+			itemStyle: {
+
+				normal: {
+					barBorderRadius: [20, 0, 0, 20],
+					color: 'aqua'
+				}
+			}
+		},
+		{
+			name: '娱乐场所',
+			type: 'bar',
+			stack: '种类',
+			data: [120, 132, 101, 134, 290, 230, 220, 134, 290, 230, 220],
+			itemStyle: {
+				normal: {
+					color: '#FBB03B'
+				}
+			}
+		},
+		{
+			name: '危险品单位',
+			type: 'bar',
+			stack: '种类',
+			data: [60, 72, 71, 74, 190, 130, 110, 174, 190, 130, 110],
+			itemStyle: {
+				normal: {
+					barBorderRadius: [0, 20, 20, 0],
+					color: '#F15A24'
+				}
+			}
+		}
+	]
+};
