@@ -1,0 +1,76 @@
+// 柱状图
+// var myChart = echarts.init(document.getElementById('lb-2'));
+var nData = ['姑苏区', '园  区 ', '虎丘区', '吴中区', '相城区', '吴江区', '张家港', '常熟市', '昆山市', '太仓市', '度假区'];
+
+option = {
+
+	tooltip: {
+		trigger: 'axis',
+		axisPointer: {
+			type: 'shadow'
+		}
+	},
+	grid: {
+		left: '10%',
+		right: '12%',
+		bottom: '2%',
+		top: '10%',
+		containLabel: true
+	},
+	xAxis: {
+		type: 'category',
+		data:nData,
+		axisLine: {
+			show: true,
+			lineStyle: {
+				color: '#00ffee',
+			}
+		},
+		axisLabel: {
+			interval: 0,
+			rotate: 45,
+			textStyle: {
+				fontSize: 10
+			}
+		}
+	},
+	yAxis: {
+		type: 'value',
+		boundaryGap: [0, 0.01],
+		max:150,
+		axisLine: {
+			show: true,
+			lineStyle: {
+				color: '#00ffee'
+			}
+		},
+		splitLine: { //网格线
+			show: false
+		}
+	},
+
+	series: [{
+			name: '娼',
+			type: 'bar',
+			barWidth: 2,
+			data: [70, 70, 70, 78, 60, 70, 70, 67, 70, 70, 75],
+			itemStyle: {
+				normal: {
+					color: '#FFB739',
+				}
+			}
+		},
+		{
+			name: '赌',
+			type: 'bar',
+			barWidth: 2,
+			data: [130, 135, 130, 110, 130, 120, 130, 130, 150, 130, 125],
+			itemStyle: {
+				normal: {
+					color: 'aqua',
+				}
+			}
+		}
+	]
+};
+// myChart.setOption(option);
