@@ -1,0 +1,63 @@
+// 柱状图
+// var myChart = echarts.init(document.getElementById('lb-2-2'));
+var nData = ['度假区', '太仓市', '昆山市', '常熟市', '张家港', '吴江区', '相城区', '吴中区', '虎丘区', '园   区', '姑苏区'];
+var data = [33, 23, 33, 23, 32, 33, 33, 23, 32, 23, 32];
+option = {
+	color: ['#3398DB'],
+	tooltip: {
+		trigger: 'axis',
+		axisPointer: { // 坐标轴指示器，坐标轴触发有效
+			type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+		}
+	},
+	grid: {
+		top: '10%',
+		left: '10%',
+		right: '15%',
+		bottom: '10%',
+		containLabel: true
+	},
+	yAxis: [{
+		type: 'category',
+		data: nData ,
+		axisLine: {
+			show: false,
+			lineStyle: {
+				color: '#00eeff'
+			}
+		},
+		axisTick: {
+			show: false
+		},
+    	axisLabel: {
+            color:'#00eeff',
+            fontSize:15
+        },
+	}],
+	xAxis: [{
+		show: false,
+		type: 'value'
+	}],
+	series: [{
+		name: '总计',
+		type: 'bar',
+		barWidth: '18%',
+		// barCategoryGap:10,			
+		data: data,
+		itemStyle: {
+			normal: {
+				color: '#00eeff' ,
+				label: {
+					show: true, //开启显示
+					position: ['600px','-1px'], //在上方显示
+					textStyle: { //数值样式
+							  color: '#00eeff',
+						fontSize: 15
+					}
+				}
+			}
+		},
+	}]
+};
+// 为echarts对象加载数据 
+// myChart.setOption(option);
