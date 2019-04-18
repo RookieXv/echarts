@@ -1,0 +1,80 @@
+option = {
+    tooltip:{
+        axisPointer: {
+    label: { 
+        formatter: function (params) {
+            if (params.seriesData.length === 0) {
+                // 就是这里，可以获取到我想要的那个数据
+                mouseCurValue = params.value;
+            }
+        },
+    }
+},
+    },
+    xAxis: {
+        type: 'category',
+        data: ['1','2','3','4','5','6','7','8','9','10','11','12' ],
+    	axisLine: {
+			show: true,
+			lineStyle: {
+				color: '#00eeff'
+			}
+		},
+		axisTick: {
+			show: true,
+			inside:true,
+			lineStyle: {
+				color: '#00eeff'
+			}
+		},
+    	axisLabel: {
+            color:'#00eeff'
+        },
+    },
+    yAxis: {
+        show:true,
+        type: 'value',
+        min:0,
+        max:200,
+		splitLine: { //网格线
+			show: false
+		},
+		axisLine:{
+		    lineStyle: {
+				color: '#00eeff'
+			}
+		},
+		axisTick: {
+			inside:true,
+			lineStyle: {
+				color: '#00eeff'
+			}
+		},
+    	axisLabel: {
+            color:'#00eeff'
+        },
+    },
+    series: [{
+        data: [140, 90, 80, 100, 70, 200, 190, 170, 110, 95, 60,85],
+        type: 'line',
+        areaStyle: {
+            color:new echarts.graphic.LinearGradient(0, 0, 0, 1,[{
+                            offset: 0, color: 'rgb(0,255,255,1)' // 0% 处的颜色
+                        }, {
+                            offset: 0.8, color: 'rgb(4,68,109,0.3)' // 100% 处的颜色
+                        }, {
+                            offset: 1, color: 'rgb(4,68,109,0.0)' // 100% 处的颜色
+                        }])
+            
+        },
+        color:'#FBB03B',
+        symbol: 'circle',
+        lineStyle: {        // 系列级个性化折线样式  
+                width: 0,  
+                // type: 'solid',  
+                // color: "#FBB03B" //折线的颜色
+            },
+            symbolSize:0, //折线点的大小
+
+    }]
+};
