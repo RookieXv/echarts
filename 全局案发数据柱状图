@@ -39,16 +39,16 @@ option = {
 		show: true,
 		type: 'category',
     	axisLabel: {
-            rotate: -45 // 角度
+            rotate: -45, // 角度
+            color:'#00eeff'
         },
         axisTick: {
             inside:true, //刻度朝向
             alignWithLabel:true, //刻度对齐
-            lineStyle: '#00eeff'
+            lineStyle: '#00eeff',
         },
         axisLine: {
             lineStyle: {
-                type: 'solid',
                 color: '#00eeff',//线的颜色
             }
         },
@@ -81,4 +81,4 @@ option = {
 	}]
 };
 // 为echarts对象加载数据 
-// myChart.setOption(option2);
+// myChart.setOption(option);
