@@ -1,0 +1,77 @@
+// 基于准备好的dom，初始化echarts实例
+// var myChart = echarts.init(document.getElementById('echarts-lt-2'));
+var data =  [{
+				value: 5,
+				name: '姑苏'
+			},{
+				value: 6,
+				name: '水上派出所'
+			},
+			{
+				value: 7,
+				name: '湖东派出所'
+			},
+			{
+				value: 8,
+				name: '湖西派出所'
+			},
+			{
+				value: 9,
+				name: '东沙湖派出所'
+			},
+			{
+				value: 10,
+				name: '永安桥派出所'
+			},
+			{
+				value: 11,
+				name: '斜塘派出所'
+			},
+			{
+				value: 6,
+				name: '水下派出所'
+			},
+			{
+				value: 7,
+				name: '永桥派出所'
+			},
+			{
+				value: 8,
+				name: '斜派出所'
+			},
+			{
+				value: 9,
+				name: '水派出所'
+			}
+		];
+		var color = ['#00ffff','#fcee21', '#fbb03b', '#22b573', '#2e3192', '#0071bc', '#22cc73', '#2e6692','#9932CC', '#0971bc', '#29abe2' ];
+
+// 指定图表的配置项和数据
+var option = {
+	tooltip: {
+		trigger: 'item',
+		formatter: "{a} <br/>{b} : {c} ({d}%)"
+	},
+	color: color,
+	series: [{
+		name: '访问来源',
+		type: 'pie',
+		radius: ['70%', '100%'],
+		center: ['50%', '50%'],
+		label: {
+			normal: {
+				show: false
+			},
+		},
+		data:data,
+		itemStyle: {
+			emphasis: {
+				shadowBlur: 10,
+				shadowOffsetX: 0,
+				shadowColor: 'rgba(0, 0, 0, 0.5)'
+			}
+		}
+	}]
+};
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
