@@ -1,0 +1,84 @@
+// 柱状图
+// var myChart = echarts.init(document.getElementById('bb'));
+option = {
+	color: ['#3398DB'],
+	tooltip: {
+		trigger: 'axis',
+		axisPointer: { // 坐标轴指示器，坐标轴触发有效
+			type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+		}
+	},
+	grid: {
+		top: '5%',
+		left: '6%',
+		right: '35%',
+		bottom: '13%',
+		containLabel: true
+	},
+		xAxis: [{
+		show: true,
+		type: 'value',
+		max:5,
+		axisTick: {
+            show: false, //刻度线
+        },
+        splitLine: {
+            show: false //分割线
+        },
+        axisLabel: {
+		    show:false, //文字
+        },
+        axisLine: {
+            lineStyle: {
+                type: 'solid',
+                color: '#00eeff',//线的颜色
+            }
+        }
+	}],
+	yAxis: [{
+		show: true,
+		type: 'category',
+    	axisLabel: {
+            rotate: -45 // 角度
+        },
+        axisTick: {
+            inside:true, //刻度朝向
+            alignWithLabel:true, //刻度对齐
+            lineStyle: '#00eeff'
+        },
+        axisLine: {
+            lineStyle: {
+                type: 'solid',
+                color: '#00eeff',//线的颜色
+            }
+        },
+		data: ['姑苏区','姑苏区','姑苏区','姑苏区','姑苏区','姑苏区','姑苏区','姑苏区','姑苏区','姑苏区','姑苏区'],
+	}],
+	series: [{
+		name: '间距',
+		type: 'bar',
+		stack: '数量',
+		barWidth: '10%',
+		data: [1,1,1,1,1,1,1,1,1,1,1],
+		itemStyle: {
+			normal: {
+				color: 'rgb(0,0,0,0)'
+			}
+		}
+    	},
+	    {
+		name: '直接访问',
+		type: 'bar',
+		stack: '数量',
+		barWidth: '10%',
+		// barCategoryGap:10,			
+		data: [1, 3, 2, 1, 3, 2, 1, 1, 3, 2, 1],
+		itemStyle: {
+			normal: {
+				color: 'aqua'
+			}
+		}
+	}]
+};
+// 为echarts对象加载数据 
+// myChart.setOption(option2);
