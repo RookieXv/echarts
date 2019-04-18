@@ -17,15 +17,27 @@ var data =  [{
 // 指定图表的配置项和数据
 var option = {
     title:{
-        text:
-            data[0].name+'  '+data[0].value+'\n\n'+
-            data[1].name+'  '+data[1].value+'\n\n'+
-            data[2].name+'  '+data[2].value,
+        text: // {count|}自定义css样式
+            '{count|'+data[0].name+'  '+data[0].value+'}\n\n{use|'+
+            data[1].name+'  '+data[1].value+'}\n\n{in|'+
+            data[2].name+'  '+data[2].value+'}',
         left: 'center',
         top: '40%',
         textStyle:{
-            color:'#00eeff',
-            fontSize:25
+            rich:{
+                count: {
+                    fontSize: 30,
+                    color: color[0]
+                },
+                use: {
+                    fontSize: 30,
+                    color: color[1]
+                },
+                in: {
+                    fontSize: 30,
+                    color: color[2]
+                }
+            }
         }
     },
 	tooltip: {
