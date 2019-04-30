@@ -66,7 +66,7 @@ option = {
 			}
 		}
     	},
-	    {
+	    	    {
 		name: '直接访问',
 		type: 'bar',
 		stack: '数量',
@@ -75,7 +75,16 @@ option = {
 		data: [1, 3, 2, 1, 3, 2, 1, 1, 3, 2, 1],
 		itemStyle: {
 			normal: {
-				color: 'aqua'
+				color: 'aqua',
+			label: {
+				show: true, //开启显示
+				position: "right", // 在右边显示 ['210px','-1px']定位方式
+				textStyle: { // 数值样式
+					color: '#00eeff',
+				// 	fontSize: 14,
+				//  	fontWeight: 300
+    		    			}
+    		  	 	 }
 			}
 		}
 	}]
